@@ -32,6 +32,14 @@ export const skills = [
 export const projects = [
   {
     id: nanoid(),
+    img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpic1.zhimg.com%2Fv2-63137195339fea6c5974b459002c4824_r.jpg&f=1&nofb=1&ipt=24b838202e3314fbc0eb5469498eebf42e5edc8fb21d8a52476a7b36ee371cb1&ipo=images',
+    url: 'https://excalidraw-nine-olive.vercel.app/',
+    github: 'https://github.com/aksh-ay06/excalidraw',
+    title: 'Excalidraw - Clone',
+    text: 'Built and deployed a fullstack whiteboard applicaiton that utilizes websocket for bi-directional and low latency communication using socket.io, frontend made using Nextjs14 deployed on vercel and backend made using express deployed on render.',
+  },
+  {
+    id: nanoid(),
     img: 'https://images.pexels.com/photos/17614476/pexels-photo-17614476/free-photo-of-young-man-using-new-meta-threads-app-on-smartphone.jpeg',
     url: 'https://threads-aksh-ay06.vercel.app/',
     github: 'https://github.com/aksh-ay06/threads',
@@ -53,5 +61,5 @@ export const projects = [
     github: 'https://github.com/aksh-ay06/nft-marketplace',
     title: 'NFT Marketplace - Cryptoket',
     text: 'Building a nft smart-contract marketplace using Nextjs Page Router and tailwind - in progress',
-  }
+  },
 ];
