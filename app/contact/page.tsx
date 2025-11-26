@@ -23,16 +23,22 @@ export default function ContactPage() {
     setStatus('submitting')
     setMessage('')
 
-    const result = await submitContactForm(data)
+    try {
+      const result = await submitContactForm(data)
 
-    if (result.success) {
-      setStatus('success')
-      setMessage(result.message)
-      reset()
-      setTimeout(() => setStatus('idle'), 5000)
-    } else {
+      if (result && result.success) {
+        setStatus('success')
+        setMessage(result.message)
+        reset()
+        setTimeout(() => setStatus('idle'), 5000)
+      } else {
+        setStatus('error')
+        setMessage(result?.message || 'An unexpected error occurred. Please try again.')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
       setStatus('error')
-      setMessage(result.message)
+      setMessage('An unexpected error occurred. Please try again.')
     }
   }
 

@@ -1,6 +1,9 @@
 'use server'
 
 import { z } from 'zod'
+import { Resend } from 'resend'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -16,19 +19,51 @@ export async function submitContactForm(data: ContactFormData) {
     // Validate the data
     const validatedData = contactSchema.parse(data)
 
-    // TODO: Implement your email sending logic here
-    // For now, we'll just log it and simulate a delay
-    console.log('Contact form submission:', validatedData)
-    
-    // Simulate email sending delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    // Check if Resend API key is configured
+    if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === 'your_resend_api_key_here') {
+      console.error('Resend API key not configured')
+      return {
+        success: false,
+        message: 'Email service is not configured. Please contact the site administrator.',
+      }
+    }
 
-    // Example integrations you could add:
-    // - Send email via SendGrid, AWS SES, or similar
-    // - Save to database
-    // - Send to Slack/Discord webhook
-    // - Create GitHub issue
-    
+    // Send email via Resend
+    // Note: On free tier, you can only send to verified emails or use delivered@resend.dev for testing
+    const result = await resend.emails.send({
+      from: 'Portfolio Contact <onboarding@resend.dev>',
+      to: process.env.CONTACT_EMAIL || 'delivered@resend.dev', // Use delivered@resend.dev for testing
+      replyTo: validatedData.email,
+      subject: `Portfolio Contact: ${validatedData.subject}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>From:</strong> ${validatedData.name}</p>
+        <p><strong>Email:</strong> ${validatedData.email}</p>
+        <p><strong>Subject:</strong> ${validatedData.subject}</p>
+        <hr />
+        <p><strong>Message:</strong></p>
+        <p>${validatedData.message.replace(/\n/g, '<br>')}</p>
+      `,
+      text: `
+From: ${validatedData.name}
+Email: ${validatedData.email}
+Subject: ${validatedData.subject}
+
+Message:
+${validatedData.message}
+      `,
+    })
+
+    console.log('Resend result:', result)
+
+    if (result.error) {
+      console.error('Resend error:', result.error)
+      return {
+        success: false,
+        message: `Failed to send email: ${result.error.message || 'Unknown error'}`,
+      }
+    }
+
     return { success: true, message: 'Message sent successfully!' }
   } catch (error) {
     if (error instanceof z.ZodError) {
