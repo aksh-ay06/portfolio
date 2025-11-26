@@ -12,7 +12,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="font-mono text-lg font-semibold text-gradient">
-              ENGINEER
+              Akshay
             </h3>
             <p className="text-sm text-foreground-secondary max-w-xs">
               {siteConfig.description}
