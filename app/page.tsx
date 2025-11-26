@@ -22,7 +22,7 @@ export default function HomePage() {
           <FadeIn>
             <div className="mb-6 inline-block">
               <span className="font-mono text-sm uppercase tracking-wider text-accent">
-                Portfolio 2024
+                Portfolio
               </span>
             </div>
           </FadeIn>
