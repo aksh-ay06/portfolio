@@ -3,7 +3,7 @@ title: "Building Production ML Pipelines: Lessons Learned"
 date: "2024-11-15"
 excerpt: "A deep dive into building scalable machine learning pipelines that handle millions of predictions daily. Learn about the architecture decisions, monitoring strategies, and gotchas I encountered."
 tags: ["Machine Learning", "MLOps", "Python", "Kubernetes"]
-author: "Engineer"
+author: "Akshay"
 readTime: "8 min read"
 ---
 

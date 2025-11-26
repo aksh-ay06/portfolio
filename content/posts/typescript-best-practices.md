@@ -3,7 +3,7 @@ title: "TypeScript Best Practices for Large-Scale Applications"
 date: "2024-09-05"
 excerpt: "Practical patterns and practices for maintaining type safety and code quality in large TypeScript codebases. From strict mode to advanced type patterns."
 tags: ["TypeScript", "Software Engineering", "Web Development"]
-author: "Engineer"
+author: "Akshay"
 readTime: "6 min read"
 ---
 

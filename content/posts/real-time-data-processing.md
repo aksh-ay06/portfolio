@@ -3,7 +3,7 @@ title: "Real-Time Data Processing with Kafka and Flink"
 date: "2024-10-22"
 excerpt: "How we built a data platform processing 5 billion events daily using Apache Kafka and Flink. Architecture patterns, scaling strategies, and lessons from production."
 tags: ["Data Engineering", "Kafka", "Flink", "Distributed Systems"]
-author: "Engineer"
+author: "Akshay"
 readTime: "10 min read"
 ---
 
