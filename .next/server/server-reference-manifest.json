@@ -1,0 +1,17 @@
+{
+  "node": {
+    "407cb86d23451b5b096cbadf3b21f725838fde862e": {
+      "workers": {
+        "app/contact/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fworkspaces%2Fportfolio%2Fapp%2Fcontact%2Factions.ts%22%2C%5B%5B%22407cb86d23451b5b096cbadf3b21f725838fde862e%22%2C%22submitContactForm%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/contact/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "KZjA7lBXcEIBQ1SKYG8hZfUe8wHRaVcekkhsZ32oz2Q="
+}

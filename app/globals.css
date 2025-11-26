@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode colors (Option 2 - Light variant) */
+    --background: 250 250 250;
+    --surface: 255 255 255;
+    --surface-elevated: 255 255 255;
+    --foreground: 24 24 27;
+    --foreground-secondary: 113 113 122;
+    --primary: 124 58 237;
+    --primary-foreground: 255 255 255;
+    --secondary: 228 228 231;
+    --secondary-foreground: 24 24 27;
+    --accent: 124 58 237;
+    --accent-secondary: 6 182 212;
+    --border: 228 228 231;
+  }
+
+  .dark {
+    /* Dark mode colors (Option 2 - Primary) */
+    --background: 10 10 15;
+    --surface: 22 22 31;
+    --surface-elevated: 30 30 46;
+    --foreground: 228 228 231;
+    --foreground-secondary: 161 161 170;
+    --primary: 139 92 246;
+    --primary-foreground: 255 255 255;
+    --secondary: 39 39 42;
+    --secondary-foreground: 228 228 231;
+    --accent: 139 92 246;
+    --accent-secondary: 6 182 212;
+    --border: 39 39 42;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent via-accent-secondary to-accent bg-clip-text text-transparent;
+  }
+
+  .glow {
+    filter: drop-shadow(0 0 20px rgb(var(--accent) / 0.4));
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px rgb(var(--accent) / 0.3);
+  }
+}
