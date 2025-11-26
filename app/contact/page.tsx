@@ -74,7 +74,7 @@ export default function ContactPage() {
                       href="mailto:hello@example.com"
                       className="transition-colors hover:text-accent"
                     >
-                      hello@example.com
+                      akshaypatelnitb6@gmail.com
                     </a>
                   </div>
                   <div>
