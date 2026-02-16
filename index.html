@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshay Patel — Data Scientist & ML Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-logo">AP</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="container hero-content">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">Akshay Patel</h1>
+            <h2 class="hero-title"><span id="typingText"></span><span class="typing-cursor">|</span></h2>
+            <p class="hero-location">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Morgantown, WV
+            </p>
+            <p class="hero-tagline">Turning complex data into actionable insights with machine learning, statistical modeling, and a foundation in industrial &amp; chemical engineering.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="#projects" class="btn btn-outline">View Projects</a>
+            </div>
+            <div class="hero-social">
+                <a href="https://github.com/aksh-ay06" target="_blank" aria-label="GitHub">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/aksh-ay06" target="_blank" aria-label="LinkedIn">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="mailto:akshaypatelnitb6@gmail.com" aria-label="Email">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats Bar -->
+    <section class="stats-bar" id="statsBar">
+        <div class="container stats-grid">
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-target="9">0</span><span class="stat-suffix">+</span>
+                <span class="stat-label">Industrial Facilities Assessed</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-prefix">$</span><span class="stat-number" data-target="150">0</span><span class="stat-suffix">K+</span>
+                <span class="stat-label">Annual Savings Identified</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-prefix">$</span><span class="stat-number" data-target="1">0</span><span class="stat-suffix">M+</span>
+                <span class="stat-label">Grant Funding Supported</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-target="120">0</span><span class="stat-suffix"> ton/yr</span>
+                <span class="stat-label">CO&#8322; Reduction Estimated</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <div class="about-grid">
+                <div class="about-photo fade-in">
+                    <img src="profile.png" alt="Akshay Patel" class="profile-photo">
+                </div>
+                <div class="about-text fade-in">
+                    <p>I'm a data scientist and machine learning engineer with a background in chemical and industrial engineering. I specialize in building predictive models, designing experiments, and extracting meaningful patterns from complex datasets.</p>
+                    <p>My work spans energy analytics and optimization, NLP-driven compliance automation, public health modeling, and statistical process control &mdash; applying rigorous ML methods to deliver measurable impact across industrial, government, and healthcare domains.</p>
+                    <p>With hands-on experience leading client-facing assessments at industrial facilities and developing NLP pipelines for Fortune 500 cybersecurity programs, I bridge the gap between advanced analytics and real-world decision-making.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section section-alt" id="education">
+        <div class="container">
+            <h2 class="section-title fade-in">Education</h2>
+            <div class="education-grid">
+                <div class="edu-card fade-in">
+                    <div class="edu-card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+                    </div>
+                    <h3>Master of Science in Industrial Engineering</h3>
+                    <h4>West Virginia University, Morgantown, WV</h4>
+                    <span class="edu-date">January 2024 &mdash; May 2026</span>
+                    <div class="edu-coursework">
+                        <strong>Relevant Coursework:</strong> Machine Learning, Design of Experiments
+                    </div>
+                </div>
+                <div class="edu-card fade-in">
+                    <div class="edu-card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+                    </div>
+                    <h3>Bachelor of Technology in Chemical Engineering</h3>
+                    <h4>Maulana Azad National Institute of Technology (MANIT), Bhopal, India</h4>
+                    <span class="edu-date">August 2019 &mdash; May 2023</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specializations / What I Do -->
+    <section class="section" id="specializations">
+        <div class="container">
+            <h2 class="section-title fade-in">What I Do</h2>
+            <div class="spec-grid">
+                <div class="spec-card fade-in">
+                    <div class="spec-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Predictive Modeling & ML</h3>
+                    <p>Classification, regression, and ensemble methods for industrial energy optimization and public health applications. End-to-end pipelines from data curation to deployment.</p>
+                </div>
+                <div class="spec-card fade-in">
+                    <div class="spec-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                    </div>
+                    <h3>NLP & Text Analytics</h3>
+                    <p>Sentence transformers, semantic similarity, and compliance automation. Built hybrid NLP pipelines combining embeddings with rule-based detection for cybersecurity.</p>
+                </div>
+                <div class="spec-card fade-in">
+                    <div class="spec-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h3>Energy Analytics & Optimization</h3>
+                    <p>Facility assessments, baseline consumption modeling, and retrofit analysis. Quantified $150K+ in annual savings across 9 industrial facilities per ASHRAE standards.</p>
+                </div>
+                <div class="spec-card fade-in">
+                    <div class="spec-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                    </div>
+                    <h3>Statistical Process Control</h3>
+                    <p>Multivariate SPC, PCA-based monitoring, and anomaly detection. Reduced dimensionality by 85% and identified 12.3% out-of-control observations in manufacturing data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section section-alt" id="skills">
+        <div class="container">
+            <h2 class="section-title fade-in">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <h3>ML & Statistical Methods</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Classification</span>
+                        <span class="tag">Regression</span>
+                        <span class="tag">Neural Networks</span>
+                        <span class="tag">Time Series</span>
+                        <span class="tag">SVM</span>
+                        <span class="tag">Random Forest</span>
+                        <span class="tag">Decision Trees</span>
+                        <span class="tag">Naive Bayes</span>
+                        <span class="tag">KNN</span>
+                        <span class="tag">PCA</span>
+                        <span class="tag">Hypothesis Testing</span>
+                        <span class="tag">Predictive Analysis</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <h3>NLP</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Sentence Transformers</span>
+                        <span class="tag">Cosine Similarity</span>
+                        <span class="tag">Text Classification</span>
+                        <span class="tag">MiniLM-L6-v2</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <h3>Libraries & Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="tag">SciPy</span>
+                        <span class="tag">NumPy</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Matplotlib</span>
+                        <span class="tag">Scikit-Learn</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <h3>Visualization & BI</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Excel</span>
+                        <span class="tag">Matplotlib</span>
+                        <span class="tag">Seaborn</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <h3>Domain Knowledge</h3>
+                    <div class="skill-tags">
+                        <span class="tag">ASHRAE Standards</span>
+                        <span class="tag">NIST 800-53</span>
+                        <span class="tag">STIG</span>
+                        <span class="tag">CRISP-DM</span>
+                        <span class="tag">DOE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+        <div class="container">
+            <h2 class="section-title fade-in">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jan 2024 &mdash; Dec 2025</span>
+                        <h3>Graduate Research Assistant (Data Scientist &mdash; Energy Analyst)</h3>
+                        <h4>WVU IMSE Pollution Prevention Group, Morgantown, WV</h4>
+                        <ul class="timeline-bullets">
+                            <li>Led client-facing energy assessments across 9 industrial facilities, collecting on-site operational data and conducting stakeholder interviews to formalize operational constraints, business objectives, and decision criteria for data-driven efficiency recommendations.</li>
+                            <li>Curated and normalized facility-level energy datasets (equipment inventories, load profiles, operating schedules) to construct baseline consumption models and evaluate multiple retrofit scenarios, quantifying energy savings and operational efficiency trade-offs.</li>
+                            <li>Integrated physical system specifications (HVAC, lighting, envelope systems per ASHRAE standards) with temporal energy data to identify and prioritize $150,000+ in annual cost-reduction opportunities.</li>
+                            <li>Performed sensitivity analysis, ROI, and payback period calculations to evaluate project feasibility, estimating a 120-ton/year CO&#8322; reduction and presenting cost-benefit trade-offs and investment recommendations to executive decision-makers.</li>
+                            <li>Developed grant-compliant dashboards (Power BI/Excel) and technical reports that translated complex energy models into actionable decision support, directly contributing to $1M+ in successful USDA REAP funding applications.</li>
+                            <li>Delivered technical webinars on motor efficiency, boiler optimization, and energy-saving strategies, translating analytical findings into operational best practices for 50+ non-technical stakeholders.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Aug 2025 &mdash; Dec 2025</span>
+                        <h3>Cybersecurity Analyst (NLP Engineering)</h3>
+                        <h4>Data Driven WV, Morgantown, WV</h4>
+                        <ul class="timeline-bullets">
+                            <li>Led development of an NLP-based compliance automation Proof of Concept for a Fortune 500 government services organization, collaborating with a client cybersecurity program manager to gather requirements and validate system design.</li>
+                            <li>Delivered automated log classification results to 20+ executive stakeholders, securing approval to transition the solution to in-house production development.</li>
+                            <li>Engineered a hybrid NLP pipeline aligned with STIG Viewer standards and NIST 800-53, combining sentence transformers (MiniLM-L6-v2, cosine similarity) with rule-based detection for high-confidence matches and semantic embeddings for ambiguous entries.</li>
+                            <li>Evaluated model performance using precision-recall analysis and threshold tuning (0.15&ndash;0.70) to manage false-positive risk under regulatory and compliance constraints.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section section-alt" id="projects">
+        <div class="container">
+            <h2 class="section-title fade-in">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <span class="project-date">October 2024</span>
+                    </div>
+                    <h3>Time Series Clustering for Industrial Energy Optimization</h3>
+                    <p>Applied the CRISP-DM framework to analyze OPC-UA industrial sensor data across 27 production shifts, engineering time-series features (Total Active Energy, Active Power L2) and implementing DTW-based Time-Series KMeans to identify anomalous operating regimes linked to energy inefficiency and quality defects.</p>
+                    <div class="project-metrics">
+                        <span class="metric">Silhouette: 0.65&ndash;0.66</span>
+                        <span class="metric">Calinski-Harabasz: up to 82</span>
+                        <span class="metric">27 production shifts</span>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Time Series</span>
+                        <span class="tag">DTW</span>
+                        <span class="tag">KMeans</span>
+                        <span class="tag">CRISP-DM</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <span class="project-date">November 2025</span>
+                    </div>
+                    <h3>County-Level Food & Health Outcomes Modeling</h3>
+                    <p>Built end-to-end ML pipelines on 2,500+ U.S. counties and 300+ features to predict food insecurity, diabetes prevalence (regression), and obesity hotspots (classification) using Gradient Boosting and Logistic Regression. Designed robust preprocessing and validated with nested cross-validation and bootstrap uncertainty analysis.</p>
+                    <div class="project-metrics">
+                        <span class="metric">2,500+ counties</span>
+                        <span class="metric">300+ features</span>
+                        <span class="metric">Nested CV + Bootstrap</span>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Gradient Boosting</span>
+                        <span class="tag">Logistic Regression</span>
+                        <span class="tag">Public Health</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                        </div>
+                        <span class="project-date">November 2025</span>
+                    </div>
+                    <h3>Multivariate Quality Control & Anomaly Detection</h3>
+                    <p>Developed a robust multivariate statistical process control (MSPC) framework on 552 manufacturing records with 209 variables. Used PCA and robust outlier detection to isolate a stable in-control baseline, then deployed a Phase II Hotelling's T&sup2; monitoring scheme for real-time anomaly detection.</p>
+                    <div class="project-metrics">
+                        <span class="metric">85% dimensionality reduction</span>
+                        <span class="metric">209 &rarr; 46 PCs</span>
+                        <span class="metric">68 anomalies (12.3%)</span>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">PCA</span>
+                        <span class="tag">Hotelling's T&sup2;</span>
+                        <span class="tag">SPC</span>
+                        <span class="tag">Anomaly Detection</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <p>I'm always open to discussing data science projects, research collaborations, or opportunities.</p>
+                    <div class="contact-links">
+                        <a href="mailto:akshaypatelnitb6@gmail.com" class="contact-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            akshaypatelnitb6@gmail.com
+                        </a>
+                        <a href="tel:+13049066801" class="contact-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            +1 (304) 906-6801
+                        </a>
+                        <a href="https://linkedin.com/in/aksh-ay06" target="_blank" class="contact-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/aksh-ay06" target="_blank" class="contact-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form fade-in" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Akshay Patel. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/aksh-ay06" target="_blank" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="https://github.com/aksh-ay06" target="_blank" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
