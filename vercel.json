@@ -1,8 +1,10 @@
 {
-  "buildCommand": null,
-  "outputDirectory": ".",
   "framework": null,
-  "rewrites": [
-    { "source": "/api/contact", "destination": "/api/contact" }
-  ]
+  "buildCommand": "npm install",
+  "outputDirectory": ".",
+  "functions": {
+    "api/contact.js": {
+      "memory": 128
+    }
+  }
 }
