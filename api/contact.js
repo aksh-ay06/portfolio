@@ -1,4 +1,5 @@
 const { Resend } = require('resend');
+const { buildEmailHtml } = require('../lib/email');
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -17,15 +18,9 @@ module.exports = async (req, res) => {
         await resend.emails.send({
             from: 'Portfolio Contact <onboarding@resend.dev>',
             to: process.env.CONTACT_EMAIL || 'akshaypatelnitb6@gmail.com',
-            subject: `Portfolio Contact: ${name}`,
+            subject: `Portfolio Contact: ${name.slice(0, 100)}`,
             replyTo: email,
-            html: `
-                <h2>New message from your portfolio</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Message:</strong></p>
-                <p>${message.replace(/\n/g, '<br>')}</p>
-            `,
+            html: buildEmailHtml(name, email, message),
         });
 
         res.json({ success: true });

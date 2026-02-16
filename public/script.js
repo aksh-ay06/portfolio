@@ -48,24 +48,23 @@ navMenu.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// ===== Navbar Shadow on Scroll =====
+// ===== Scroll-driven UI (consolidated) =====
 const navbar = document.getElementById('navbar');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// ===== Active Nav Link on Scroll =====
+const backToTop = document.getElementById('backToTop');
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
-function updateActiveNav() {
-    const scrollPos = window.scrollY + 100;
+window.addEventListener('scroll', () => {
+    const y = window.scrollY;
 
+    // Navbar shadow
+    navbar.classList.toggle('scrolled', y > 10);
+
+    // Back to top visibility
+    backToTop.classList.toggle('visible', y > 300);
+
+    // Active nav link
+    const scrollPos = y + 100;
     sections.forEach(section => {
         const top = section.offsetTop;
         const height = section.offsetHeight;
@@ -80,9 +79,11 @@ function updateActiveNav() {
             });
         }
     });
-}
+});
 
-window.addEventListener('scroll', updateActiveNav);
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 // ===== Fade-in on Scroll =====
 const fadeElements = document.querySelectorAll('.fade-in');
@@ -146,33 +147,13 @@ if (statsBar) {
 
 // ===== Dark Mode Toggle =====
 const themeToggle = document.getElementById('themeToggle');
-const html = document.documentElement;
-
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-    html.setAttribute('data-theme', savedTheme);
-}
 
 themeToggle.addEventListener('click', () => {
+    const html = document.documentElement;
     const current = html.getAttribute('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
-});
-
-// ===== Back to Top =====
-const backToTop = document.getElementById('backToTop');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTop.classList.add('visible');
-    } else {
-        backToTop.classList.remove('visible');
-    }
-});
-
-backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 // ===== Contact Form =====
@@ -205,7 +186,10 @@ contactForm.addEventListener('submit', async (e) => {
             throw new Error(err.error || 'Something went wrong.');
         }
 
-        contactForm.innerHTML = `<div class="form-success">Thanks, ${data.name}! Your message has been sent.</div>`;
+        const successEl = document.createElement('div');
+        successEl.className = 'form-success';
+        successEl.textContent = `Thanks, ${data.name}! Your message has been sent.`;
+        contactForm.replaceChildren(successEl);
     } catch (err) {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;

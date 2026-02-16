@@ -1,16 +1,36 @@
 const express = require('express');
 const { Resend } = require('resend');
 const path = require('path');
+const { buildEmailHtml } = require('./lib/email');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-app.use(express.static(path.join(__dirname)));
+// Rate limiting: max 5 requests per IP per 15 minutes
+const rateMap = new Map();
+function rateLimit(req, res, next) {
+    const ip = req.ip;
+    const now = Date.now();
+    const window = 15 * 60 * 1000;
+    const max = 5;
+
+    if (!rateMap.has(ip)) rateMap.set(ip, []);
+    const hits = rateMap.get(ip).filter(t => now - t < window);
+    hits.push(now);
+    rateMap.set(ip, hits);
+
+    if (hits.length > max) {
+        return res.status(429).json({ error: 'Too many requests. Please try again later.' });
+    }
+    next();
+}
+
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
-app.post('/api/contact', async (req, res) => {
+app.post('/api/contact', rateLimit, async (req, res) => {
     const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
@@ -21,15 +41,9 @@ app.post('/api/contact', async (req, res) => {
         await resend.emails.send({
             from: 'Portfolio Contact <onboarding@resend.dev>',
             to: process.env.CONTACT_EMAIL || 'akshaypatelnitb6@gmail.com',
-            subject: `Portfolio Contact: ${name}`,
+            subject: `Portfolio Contact: ${name.slice(0, 100)}`,
             replyTo: email,
-            html: `
-                <h2>New message from your portfolio</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Message:</strong></p>
-                <p>${message.replace(/\n/g, '<br>')}</p>
-            `,
+            html: buildEmailHtml(name, email, message),
         });
 
         res.json({ success: true });

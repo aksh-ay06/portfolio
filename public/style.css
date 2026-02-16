@@ -406,20 +406,6 @@ img {
     align-items: start;
 }
 
-.photo-placeholder {
-    width: 240px;
-    height: 240px;
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-    font-weight: 700;
-    color: #fff;
-    margin: 0 auto;
-}
-
 .profile-photo {
     width: 240px;
     height: 300px;

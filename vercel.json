@@ -1,7 +1,7 @@
 {
   "framework": null,
   "buildCommand": "npm install",
-  "outputDirectory": ".",
+  "outputDirectory": "public",
   "functions": {
     "api/contact.js": {
       "memory": 128
