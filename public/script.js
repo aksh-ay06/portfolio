@@ -164,6 +164,38 @@ themeToggle.addEventListener('click', () => {
     localStorage.setItem('theme', next);
 });
 
+// ===== Architecture Modal =====
+const archModal = document.getElementById('archModal');
+const openArchBtn = document.getElementById('openArchModal');
+const closeArchBtn = document.getElementById('closeArchModal');
+
+function openModal() {
+    archModal.removeAttribute('hidden');
+    requestAnimationFrame(() => archModal.classList.add('modal-visible'));
+    document.body.style.overflow = 'hidden';
+    closeArchBtn.focus();
+}
+
+function closeModal() {
+    archModal.classList.remove('modal-visible');
+    archModal.addEventListener('transitionend', () => {
+        archModal.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        openArchBtn.focus();
+    }, { once: true });
+}
+
+openArchBtn.addEventListener('click', openModal);
+closeArchBtn.addEventListener('click', closeModal);
+
+archModal.addEventListener('click', (e) => {
+    if (e.target === archModal) closeModal();
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !archModal.hasAttribute('hidden')) closeModal();
+});
+
 // ===== Contact Form =====
 const contactForm = document.getElementById('contactForm');
 
