@@ -49,7 +49,7 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 Boston, MA
             </p>
-            <p class="hero-tagline">Building production RAG systems, LLM agents, and data pipelines that ship.</p>
+            <p class="hero-tagline">Engineering background. ML focus. Building systems that work in production, not just notebooks.</p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary">Get in Touch</a>
                 <a href="#projects" class="btn btn-outline">View Projects</a>
@@ -110,43 +110,6 @@
         </div>
     </section>
 
-    <!-- What I Do -->
-    <section class="section section-alt" id="specializations">
-        <div class="container">
-            <h2 class="section-title fade-in">What I Do</h2>
-            <div class="spec-grid">
-                <div class="spec-card fade-in">
-                    <div class="spec-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-                    </div>
-                    <h3>RAG & Hybrid Search</h3>
-                    <p>Production hybrid RAG systems with BM25 + dense vector retrieval, Reciprocal Rank Fusion reranking, and OpenSearch as the backbone. Built to serve accurate, cited Q&amp;A at scale.</p>
-                </div>
-                <div class="spec-card fade-in">
-                    <div class="spec-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><line x1="12" y1="8" x2="5.5" y2="16.5"/><line x1="12" y1="8" x2="18.5" y2="16.5"/></svg>
-                    </div>
-                    <h3>LLM Agents &amp; Pipelines</h3>
-                    <p>Multi-agent systems with LangGraph state machines, guarded orchestration, and domain-specialized agent tools. Designed for reliability and auditability in complex decision workflows.</p>
-                </div>
-                <div class="spec-card fade-in">
-                    <div class="spec-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                    </div>
-                    <h3>Production API Engineering</h3>
-                    <p>Async FastAPI backends with Server-Sent Events for streaming LLM responses, Redis session memory for multi-turn dialogue, and Pydantic-validated schemas end-to-end.</p>
-                </div>
-                <div class="spec-card fade-in">
-                    <div class="spec-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    </div>
-                    <h3>Observability &amp; MLOps</h3>
-                    <p>Full tracing with Langfuse, 11-service Docker orchestration, Airflow DAGs for automated data ingestion, and comprehensive async test suites. Built to instrument and improve what ships.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Projects -->
     <section class="section" id="projects">
         <div class="container">
@@ -160,7 +123,22 @@
                         <span class="project-date">2025</span>
                     </div>
                     <h3>arXiv RAG Curator</h3>
-                    <p>Production hybrid RAG system that ingests daily arXiv CS.AI papers via an automated Airflow pipeline, indexes them with BM25 + 1024-dim HNSW vector search (Reciprocal Rank Fusion), and serves Q&amp;A via a streaming FastAPI backend with multi-turn Redis session memory and full Langfuse observability tracing.</p>
+                    <p>Production hybrid RAG system that ingests daily arXiv CS.AI papers via an automated Airflow pipeline, indexes them with BM25 + 1024-dim HNSW vector search (Reciprocal Rank Fusion), and serves Q&amp;A via a streaming FastAPI backend with multi-turn Redis session memory and full Langfuse observability tracing. The hardest part was tuning RRF weight balance — BM25 dominated on keyword-heavy queries while vector search won on conceptual ones, so neither alone was reliable. Exact-match caching on query embeddings (6h TTL) cut repeat-query latency by 145x without touching the retrieval stack.</p>
+                    <div class="arch-diagram">
+                        <div class="arch-node">arXiv API</div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-node">Airflow DAG</div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-node">Docling</div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-node">Jina Embeddings</div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-node arch-node--highlight">OpenSearch<br><small>BM25 + k-NN</small></div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-node">FastAPI + SSE</div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-node">Redis Cache</div>
+                    </div>
                     <div class="project-metrics">
                         <span class="metric">72ms hybrid search</span>
                         <span class="metric">145x cache speedup</span>
@@ -192,7 +170,7 @@
                         <span class="project-date">2025</span>
                     </div>
                     <h3>Supply Chain Intelligence Agents</h3>
-                    <p>Multi-agent supply chain decision system with guarded orchestration, domain-specialized agents, and tool-scoped execution built with LangGraph and LangChain. Designed for reliability and auditability in complex decision workflows.</p>
+                    <p>Multi-agent supply chain decision system with guarded orchestration, domain-specialized agents, and tool-scoped execution built with LangGraph and LangChain. The main challenge was preventing agents from calling tools outside their domain — a routing bug early on let the inventory agent trigger procurement actions, which produced confident but wrong outputs. Fixing that required explicit state guards and a supervisor layer to validate transitions before any tool executed.</p>
                     <div class="project-metrics">
                         <span class="metric">LangGraph state machine</span>
                         <span class="metric">Domain-specialized agents</span>
@@ -330,14 +308,10 @@
                     <div class="skill-tags">
                         <span class="tag">FastAPI</span>
                         <span class="tag">Python</span>
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">SQLAlchemy</span>
-                        <span class="tag">Redis</span>
                         <span class="tag">Pydantic</span>
-                        <span class="tag">REST APIs</span>
                         <span class="tag">Async Python</span>
                         <span class="tag">Server-Sent Events</span>
-                        <span class="tag">Streaming APIs</span>
+                        <span class="tag">SQLAlchemy</span>
                     </div>
                 </div>
                 <div class="skill-card fade-in">
