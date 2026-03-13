@@ -757,6 +757,28 @@ img {
     padding: 4px 10px;
 }
 
+.project-links {
+    display: flex;
+    gap: 16px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--accent);
+    transition: color 0.2s;
+}
+
+.project-link:hover {
+    color: var(--accent-hover);
+}
+
 /* ===== Contact ===== */
 .contact-grid {
     display: grid;

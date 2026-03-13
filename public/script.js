@@ -1,5 +1,5 @@
 // ===== Typing Animation =====
-const roles = ['Data Scientist', 'ML Engineer', 'Energy Analyst', 'NLP Engineer'];
+const roles = ['Applied AI Engineer', 'ML Engineer', 'RAG Systems Builder', 'LLM Pipeline Engineer'];
 const typingEl = document.getElementById('typingText');
 let roleIndex = 0;
 let charIndex = 0;
@@ -140,9 +140,17 @@ if (statsBar) {
                 statsObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.1 });
 
     statsObserver.observe(statsBar);
+
+    // Fallback: if statsBar is already in or near view on load, trigger immediately
+    window.addEventListener('load', () => {
+        const rect = statsBar.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            animateCounters();
+        }
+    });
 }
 
 // ===== Dark Mode Toggle =====
