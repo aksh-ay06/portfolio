@@ -72,20 +72,20 @@
     <section class="stats-bar" id="statsBar">
         <div class="container stats-grid">
             <div class="stat-item fade-in">
-                <span class="stat-number" data-target="7200">0</span><span class="stat-suffix">+</span>
-                <span class="stat-label">Lines of Production Python</span>
+                <span class="stat-number" data-target="72">0</span><span class="stat-suffix">ms</span>
+                <span class="stat-label">Hybrid Search Latency</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-target="145">0</span><span class="stat-suffix">x</span>
+                <span class="stat-label">Cache Speedup vs Full LLM Call</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-target="370">0</span><span class="stat-suffix">ms</span>
+                <span class="stat-label">Query Embedding Round-Trip</span>
             </div>
             <div class="stat-item fade-in">
                 <span class="stat-number" data-target="11">0</span>
-                <span class="stat-label">Services Orchestrated</span>
-            </div>
-            <div class="stat-item fade-in">
-                <span class="stat-number" data-target="52">0</span><span class="stat-suffix">+</span>
-                <span class="stat-label">Async Tests Written</span>
-            </div>
-            <div class="stat-item fade-in">
-                <span class="stat-number" data-target="1024">0</span><span class="stat-suffix">-dim</span>
-                <span class="stat-label">Vector Embeddings</span>
+                <span class="stat-label">Docker Services Orchestrated</span>
             </div>
         </div>
     </section>
@@ -162,10 +162,10 @@
                     <h3>arXiv RAG Curator</h3>
                     <p>Production hybrid RAG system that ingests daily arXiv CS.AI papers via an automated Airflow pipeline, indexes them with BM25 + 1024-dim HNSW vector search (Reciprocal Rank Fusion), and serves Q&amp;A via a streaming FastAPI backend with multi-turn Redis session memory and full Langfuse observability tracing.</p>
                     <div class="project-metrics">
-                        <span class="metric">7,200+ lines Python</span>
-                        <span class="metric">52 async tests</span>
-                        <span class="metric">11 Docker services</span>
-                        <span class="metric">1,024-dim embeddings</span>
+                        <span class="metric">72ms hybrid search</span>
+                        <span class="metric">145x cache speedup</span>
+                        <span class="metric">~370ms query embedding</span>
+                        <span class="metric">600-word chunks, 100-word overlap</span>
                     </div>
                     <div class="project-tags">
                         <span class="tag">RAG</span>
