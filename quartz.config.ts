@@ -14,7 +14,7 @@ const config: QuartzConfig = {
     enablePopovers: true,
     analytics: null,
     locale: "en-US",
-    baseUrl: " https://aksh-ay06.github.io/portfolio", // TODO: replace with your GitHub Pages / CF Pages URL
+    baseUrl: "aksh-ay06.github.io/portfolio",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     generateSocialImages: false,
