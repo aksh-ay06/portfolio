@@ -266,5 +266,3 @@ graph LR
 - [[projects/index|Projects]] — see these concepts applied in real builds
 
 ---
-
-*Written in the spirit of a lab notebook — accurate, dense, no fluff.*
