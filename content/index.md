@@ -30,12 +30,4 @@ date: 2026-03-26
 
 ---
 
-## How This Site Works
-
-Every note is a Markdown file written in [Obsidian](https://obsidian.md). `[[wikilinks]]` between notes build the graph you see on every page. A `git push` to `main` triggers a build and deploys the site automatically.
-
-The graph is not decorative — it is the index. Follow the edges.
-
----
-
-*Built with [Quartz v4](https://quartz.jzhao.xyz) · Source on [GitHub](https://github.com/your-handle/digital-brain)*
+*Built with [Quartz v4](https://quartz.jzhao.xyz) · Source on [GitHub](https://github.com/aksh-ay06/portfolio)*
