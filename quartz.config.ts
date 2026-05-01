@@ -2,13 +2,13 @@ import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
 /**
- * Quartz v4 — "Digital Brain" Portfolio
+ * Quartz v4 — "Akshay's Diary" Portfolio
  * Theme: Monochrome + Emerald Green (#10b981)
  * Font:  Inter (body) + JetBrains Mono (headers/code)
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Digital Brain",
+    pageTitle: "Akshay's Diary",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
