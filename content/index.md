@@ -3,9 +3,9 @@ title: "Home"
 date: 2026-03-26
 ---
 
-# Digital Brain
+# Akshay Patel
 
-> A living portfolio, learning log, and personal journal — written in Obsidian, published via Git.
+> Always Curious,Always Learning.
 
 ---
 
@@ -30,4 +30,4 @@ date: 2026-03-26
 
 ---
 
-*Built with [Quartz v4](https://quartz.jzhao.xyz) · Source on [GitHub](https://github.com/aksh-ay06/portfolio)*
+* Source on [GitHub](https://github.com/aksh-ay06/portfolio)*
