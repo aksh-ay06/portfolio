@@ -1,8 +1,7 @@
 name: Deploy Quartz to GitHub Pages
 
+# Site is deployed by Vercel; this workflow now runs only when triggered manually.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
