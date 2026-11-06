@@ -79,9 +79,9 @@ npx quartz build --serve
 
 ## Deploy
 
-Every `git push` to `main` triggers the GitHub Actions workflow and deploys to:
+Every `git push` to `main` triggers a Vercel deployment to:
 
-**https://aksh-ay06.github.io/portfolio**
+**https://akshayxcode.com**
 
 ---
 
@@ -89,5 +89,5 @@ Every `git push` to `main` triggers the GitHub Actions workflow and deploys to:
 
 - [Quartz v4](https://quartz.jzhao.xyz) — static site generator
 - [Obsidian](https://obsidian.md) — writing environment
-- GitHub Pages — hosting
-- GitHub Actions — CI/CD
+- Vercel — hosting
+- Custom domain — akshayxcode.com
