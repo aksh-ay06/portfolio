@@ -9,6 +9,10 @@ End-to-end ML and data science work. Each write-up covers the problem, the key d
 
 ---
 
+## Recommender Systems & Ranking
+
+- [[projects/two-stage-recommender|Two-Stage Recommender]]: two-tower + EASE retrieval with a LightGBM LambdaRank reranker, evaluated on MovieLens-1M and H&M (31.8M purchases) with tuned baselines, bootstrap CIs, a latency benchmark, and an A/B test plan.
+
 ## LLMs & Retrieval
 
 - [[projects/arxiv-rag|arXiv RAG]]: hybrid BM25 + vector search, multi-turn chat, a local LLM, and Airflow ingestion (10 Dockerized services).

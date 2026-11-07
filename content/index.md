@@ -19,6 +19,7 @@ I build end-to-end ML systems: statistically rigorous analysis on the front end,
 
 | Project | What it shows | Stack |
 |---|---|---|
+| [[projects/two-stage-recommender\|Two-Stage Recommender]] | Two-tower + EASE retrieval, GBM reranking; +21.8% MAP@12 over the strongest baseline on H&M, 8 ms p50 serving | PyTorch, LightGBM, FAISS |
 | [[projects/arxiv-rag\|arXiv RAG]] | Hybrid BM25 + vector retrieval over daily-ingested papers, multi-turn chat, local LLM | FastAPI, OpenSearch, Ollama, Airflow, Redis, Langfuse |
 | [[projects/pmmds\|ML Monitoring & Drift Detection]] | PSI drift detection, champion/challenger retraining, model registry | PySpark MLlib, MLflow, Prefect, Prometheus, FastAPI |
 | [[projects/demand-forecasting\|Demand Forecasting at Scale]] | 74M-row forecasting with strict temporal isolation and quantile intervals | LightGBM, MLflow, SHAP, FastAPI |
@@ -33,6 +34,7 @@ I build end-to-end ML systems: statistically rigorous analysis on the front end,
 ## Skills
 
 - **ML & Statistics:** supervised learning (GBMs, linear models), time-series forecasting, causal inference (PSM, IPTW, AIPW/DML), A/B testing, survey statistics, PCA/clustering, SHAP interpretability
+- **Recommender Systems:** two-tower retrieval, EASE / item-kNN, learning-to-rank (LambdaRank), ANN search (FAISS HNSW), offline evaluation (NDCG, MAP, paired bootstrap)
 - **LLMs & Retrieval:** RAG, hybrid search (BM25 + k-NN + RRF), multi-agent orchestration (LangGraph), guardrails, LLM observability
 - **MLOps & Data Engineering:** MLflow, Airflow, Prefect, Kestra, dbt, PySpark, Docker, FastAPI, drift monitoring, Terraform
 - **Languages & Data:** Python, SQL, C++, JavaScript · PostgreSQL, BigQuery, DuckDB, MongoDB, OpenSearch, Redis

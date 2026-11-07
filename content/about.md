@@ -72,6 +72,7 @@ I'm currently looking for **Data Scientist, ML Engineer, and MLOps** roles.
 
 See [[projects/index|Projects]] for full write-ups. Highlights:
 
+- [[projects/two-stage-recommender|Two-Stage Recommender]]: two-tower + EASE retrieval with a LambdaRank reranker, on MovieLens-1M and H&M.
 - [[projects/arxiv-rag|arXiv RAG]]: a 10-service RAG system with hybrid retrieval and a local LLM.
 - [[projects/pmmds|PMMDS]]: ML monitoring with PSI drift detection and automated champion/challenger retraining.
 - [[projects/demand-forecasting|Grupo Bimbo Forecasting]]: LightGBM on 74M+ transactions, with quantile prediction intervals.
